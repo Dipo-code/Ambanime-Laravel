@@ -16,5 +16,9 @@ class Anime extends Model
 {
     return $this->belongsToMany(Genre::class, 'anime_genres', 'id_anime', 'id_genre');
 }
+    public function episodes()
+{
+    return $this->hasMany(Episode::class, 'id_anime');
+}
 
 }

@@ -9,4 +9,9 @@ class EpisodeKualitas extends Model
 {
     /** @use HasFactory<\Database\Factories\EpisodeKualitasFactory> */
     use HasFactory;
+    
+    public function vidioKualitas()
+    {
+        return $this->belongsTo(VidioKualitas::class,'id_kualitas');
+    }
 }

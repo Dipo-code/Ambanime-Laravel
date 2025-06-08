@@ -9,4 +9,8 @@ class VidioKualitas extends Model
 {
     /** @use HasFactory<\Database\Factories\VidioKualitasFactory> */
     use HasFactory;
+    public function episodeKualitas()
+    {
+        return $this->hasmany(EpisodeKualitas::class,'id_kualitas');
+    }
 }

@@ -3,21 +3,16 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\JadwalTayang>
- */
+use App\Models\JadwalTayang;
 class JadwalTayangFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = JadwalTayang::class; 
+
     public function definition(): array
     {
         return [
-            //
+            'hari' => $this->faker->randomElement(['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu']),
+            'jam_tayang' => $this->faker->time('H:i:s'),
         ];
     }
 }

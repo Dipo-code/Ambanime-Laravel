@@ -9,4 +9,5 @@ class AnimeGenre extends Model
 {
     /** @use HasFactory<\Database\Factories\AnimeGenreFactory> */
     use HasFactory;
+
 }

@@ -2,22 +2,19 @@
 
 namespace Database\Factories;
 
+use App\Models\EpisodeKualitas;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\EpisodeKualitas>
- */
 class EpisodeKualitasFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = EpisodeKualitas::class;
+
     public function definition(): array
     {
         return [
-            //
+            'link_streaming' => $this->faker->url(),
+            'link_download_gdrive' => $this->faker->url(),
+            'link_download_zippy' => $this->faker->url(),
         ];
     }
 }

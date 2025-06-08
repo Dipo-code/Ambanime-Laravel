@@ -1,23 +1,20 @@
 <?php
 
+
 namespace Database\Factories;
 
+use App\Models\Episode;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Episode>
- */
 class EpisodeFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = Episode::class;
+
     public function definition(): array
     {
         return [
-            //
+            'judul_episode' => $this->faker->sentence(3),
+            'nomor_episode' => 1, // Akan di-set manual di Seeder agar berurutan
         ];
     }
 }

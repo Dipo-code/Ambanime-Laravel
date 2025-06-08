@@ -14,9 +14,11 @@ return new class extends Migration
         Schema::create('episode_kualitas', function (Blueprint $table) {
             $table->unsignedBigInteger('id_episode');
             $table->unsignedBigInteger('id_kualitas');
-            $table->string('link_stretring');
+            $table->string('link_streaming');
             $table->string('link_download_gdrive');
             $table->string('link_download_zippy');
+
+             $table->timestamps(); // ← Tambahkan baris ini
 
             $table->foreign('id_episode')->references('id_episode')->on('episodes')->onDelete('cascade');
             $table->foreign('id_kualitas')->references('id_kualitas')->on('vidio_kualitas')->onDelete('cascade');

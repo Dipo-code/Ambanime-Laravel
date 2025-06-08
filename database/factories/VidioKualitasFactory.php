@@ -2,22 +2,17 @@
 
 namespace Database\Factories;
 
+use App\Models\VidioKualitas;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\VidioKualitas>
- */
 class VidioKualitasFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
+    protected $model = VidioKualitas::class; 
+
     public function definition(): array
     {
         return [
-            //
+            'nama_kualitas' => $this->faker->unique()->randomElement(['480p','720P','1080P']),
         ];
     }
 }
